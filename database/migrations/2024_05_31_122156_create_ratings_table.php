@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('ratings', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('restaurant_id')->nullable();
+            $table->string('name')->nullable();
             $table->string('image')->nullable();
             $table->tinyInteger('rating');
             $table->text('text')->nullable();

@@ -25,6 +25,7 @@ class RatingSeeder extends Seeder
             Rating::create([
                 'image' => "https://picsum.photos/id/" . rand(1, 300) . "/400/400",
                 'rating' => $faker->numberBetween(1, 5),
+                'name' => $faker->name(),
                 'text' => $faker->sentence(),
                 'restaurant_id' => $faker->randomElement($restaurantIds)
             ]);

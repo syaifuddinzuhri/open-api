@@ -23,7 +23,7 @@ class RatingSeeder extends Seeder
 
         foreach (range(1, 100) as $index) {
             Rating::create([
-                'image' => 'https://picsum.photos/600/400',
+                'image' => "https://picsum.photos/id/" . rand(1, 300) . "/400/400",
                 'rating' => $faker->numberBetween(1, 5),
                 'text' => $faker->sentence(),
                 'restaurant_id' => $faker->randomElement($restaurantIds)

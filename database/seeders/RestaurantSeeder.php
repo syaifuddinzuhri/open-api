@@ -22,12 +22,12 @@ class RestaurantSeeder extends Seeder
         Restaurant::truncate();
         $categoryIds = Category::pluck('id')->toArray();
         foreach (GlobalConstant::RESTAURANT as $key => $value) {
-            $from_price = $faker->randomFloat(0, 1000, 900000);
+            $from_price = $faker->randomFloat(2, 10, 90);
             Restaurant::create([
                 'name' => $value,
                 'photo' => 'https://picsum.photos/600/400',
                 'from_price' => $from_price,
-                'to_price' => $faker->randomFloat(0, $from_price, 1000000),
+                'to_price' => $faker->randomFloat(2, $from_price, 100),
                 'status' => GlobalConstant::STATUS[array_rand(GlobalConstant::STATUS)],
                 'category_id' => $categoryIds[array_rand($categoryIds)],
                 'map' => 'https://maps.app.goo.gl/UsgmVfRyDn9ghSdH9'

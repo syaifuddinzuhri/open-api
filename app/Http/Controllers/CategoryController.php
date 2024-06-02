@@ -15,7 +15,7 @@ class CategoryController extends Controller
     public function index()
     {
         try {
-            $result = Category::orderBy('name')->sortBy('asc')->get();
+            $result = Category::orderBy('name', 'asc')->get();
             return response()->success($result, 'Data berhasil didapatkan');
         } catch (\Throwable $e) {
             return response()->error($e->getMessage(),  $e->getCode());

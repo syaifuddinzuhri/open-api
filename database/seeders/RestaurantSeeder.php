@@ -25,7 +25,7 @@ class RestaurantSeeder extends Seeder
             $price = $faker->randomFloat(0, 10, 90);
             Restaurant::create([
                 'name' => $value,
-                'photo' => 'https://picsum.photos/600/400',
+                'photo' => "https://picsum.photos/id/" . rand(1, 300) . "/600/400",
                 'price' => $price,
                 'status' => GlobalConstant::STATUS[array_rand(GlobalConstant::STATUS)],
                 'category_id' => $categoryIds[array_rand($categoryIds)],

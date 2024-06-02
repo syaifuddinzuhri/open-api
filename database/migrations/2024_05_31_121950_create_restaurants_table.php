@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('category_id')->nullable();
             $table->string('name');
+            $table->longText('description')->nullable();
             $table->string('photo')->nullable();
             $table->float('price', 16, 0)->default(0);
             $table->enum('status', ['open', 'closed'])->default('open');

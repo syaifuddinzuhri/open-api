@@ -26,6 +26,7 @@ class RestaurantSeeder extends Seeder
             Restaurant::create([
                 'name' => $value,
                 'photo' => "https://picsum.photos/id/" . rand(1, 300) . "/600/400",
+                'description' => $faker->paragraph(10, true),
                 'price' => $price,
                 'status' => GlobalConstant::STATUS[array_rand(GlobalConstant::STATUS)],
                 'category_id' => $categoryIds[array_rand($categoryIds)],

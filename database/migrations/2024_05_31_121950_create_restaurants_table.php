@@ -18,8 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id')->nullable();
             $table->string('name');
             $table->string('photo')->nullable();
-            $table->float('from_price', 16, 0)->default(0);
-            $table->float('to_price', 16, 0)->default(0);
+            $table->float('price', 16, 0)->default(0);
             $table->enum('status', ['open', 'closed'])->default('open');
             $table->string('map')->nullable();
             $table->timestamps();
